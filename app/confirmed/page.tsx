@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import WebinarDateInline from "@/components/ui/WebinarDateInline";
 
 export default function ConfirmedPage() {
   return (
@@ -11,6 +13,8 @@ export default function ConfirmedPage() {
             "radial-gradient(ellipse 80% 60% at 50% 30%, rgba(255, 200, 0, 0.04) 0%, rgba(255, 140, 0, 0.02) 40%, #0A0A0A 100%)",
         }}
       />
+
+      {/* TODO: Fire Meta Pixel "CompleteRegistration" event once ID is configured */}
 
       <div className="relative z-10 flex-1 flex flex-col px-5 pt-6 pb-12 md:px-8 lg:px-16">
         {/* Logo */}
@@ -56,10 +60,7 @@ export default function ConfirmedPage() {
                 <span className="text-[#B0B0B0] text-sm uppercase tracking-wider">
                   When
                 </span>
-                {/* TODO: Replace with actual date */}
-                <span className="text-[#FFF8E7] font-semibold">
-                  Tues, Feb 18 · 7:00 PM ET
-                </span>
+                <WebinarDateInline />
               </div>
               <div className="flex justify-between items-center border-b border-white/[0.05] pb-3">
                 <span className="text-[#B0B0B0] text-sm uppercase tracking-wider">
@@ -82,7 +83,7 @@ export default function ConfirmedPage() {
             </div>
 
             {/* TODO: Add "Add to Calendar" link (Google Calendar / .ics download) */}
-            {/* TODO: Replace with actual Zoom link */}
+            {/* TODO: Replace with actual Zoom link from Jason */}
             <p className="text-[#B0B0B0] text-sm">
               Check your email for the Zoom link. Mark your calendar — we&apos;ll
               see you there.
@@ -91,22 +92,42 @@ export default function ConfirmedPage() {
         </div>
       </div>
 
-      {/* Footer */}
+      {/* Footer — same compliance elements as landing page */}
       <footer className="relative z-10 border-t border-white/[0.05] px-5 py-8 md:px-8 lg:px-16">
         <div className="max-w-5xl mx-auto flex flex-col items-center gap-3 text-center">
           <Image
             src="/images/main-logo.png"
             alt="WeWin Games"
-            width={48}
-            height={48}
-            className="h-10 w-auto opacity-70"
+            width={96}
+            height={96}
+            quality={100}
+            className="h-10 w-auto"
           />
           <p className="text-[#B0B0B0] text-sm">
             © 2026 WeWin Games. All rights reserved.
           </p>
-          <p className="text-[#B0B0B0]/70 text-xs max-w-md">
-            Must be 21+. Results vary. This is a commission-based opportunity.
+          <p className="text-[#B0B0B0]/70 text-xs max-w-lg">
+            Must be 21+. Results not typical. Individual results will vary. This
+            is a performance-based opportunity. No income is guaranteed.
           </p>
+          <p className="text-[#B0B0B0]/60 text-xs">
+            Contact:{" "}
+            <a
+              href="mailto:hello@joinwewingames.com"
+              className="underline hover:text-[#B0B0B0]"
+            >
+              hello@joinwewingames.com
+            </a>
+          </p>
+          <div className="flex gap-4 text-xs text-[#B0B0B0]/50">
+            <Link href="/privacy" className="underline hover:text-[#B0B0B0]">
+              Privacy Policy
+            </Link>
+            <span>·</span>
+            <Link href="/terms" className="underline hover:text-[#B0B0B0]">
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </footer>
     </main>

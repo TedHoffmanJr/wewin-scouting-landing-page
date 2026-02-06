@@ -8,9 +8,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "WeWin Games — Earn $200+ on a Saturday Night",
+  title: "WeWin Games — The Side Gig That Pays You to Go Out",
   description:
-    "Free training: learn how people are making real money promoting sports betting apps at local bars. No experience needed. Must be 21+.",
+    "Free training: learn how people are promoting the most popular gaming and entertainment apps at local venues and events. No experience needed. Must be 21+.",
 };
 
 export default function RootLayout({

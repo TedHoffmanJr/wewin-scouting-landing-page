@@ -51,6 +51,7 @@ export async function POST(request: NextRequest) {
   // If GHL fails: log error, still redirect (don't lose the lead)
 
   // TODO: Fire Meta Pixel "Lead" event server-side if using Conversions API
+  // TODO: Fire Meta Pixel "CompleteRegistration" event via Conversions API once ID is configured
 
   // Handle form-encoded (no-JS) submissions with a redirect
   if (!contentType.includes("application/json")) {
