@@ -17,7 +17,7 @@ export default function PrivacyPage() {
         <div className="mb-12">
           <Link href="/">
             <Image
-              src="/images/workmark-logo.png"
+              src="/images/wordmark-logo.png"
               alt="WeWin Games"
               width={140}
               height={40}

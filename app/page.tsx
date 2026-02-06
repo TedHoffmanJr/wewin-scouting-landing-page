@@ -25,10 +25,25 @@ export default function LandingPage() {
           }}
         />
 
-        {/* TODO: When hero images are available, layer them behind content:
-            Desktop: /images/hero-bar-activation-desktop.webp (1920x1080)
-            Mobile: /images/hero-bar-activation-mobile.webp (750x1000)
-            Use warm overlay on top of image to maintain readability */}
+        {/* Hero background image — desktop and mobile versions */}
+        <Image
+          src="/images/hero-bar-activation-desktop.webp"
+          alt=""
+          fill
+          className="object-cover hidden md:block brightness-[0.65] saturate-[1.1]"
+          priority
+          sizes="100vw"
+        />
+        <Image
+          src="/images/hero-bar-activation-mobile.webp"
+          alt=""
+          fill
+          className="object-cover md:hidden brightness-[0.65] saturate-[1.1]"
+          priority
+          sizes="100vw"
+        />
+        {/* Warm overlay on top of hero image for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/60 via-transparent to-[#0A0A0A]/90 pointer-events-none" />
 
         {/* Logo now lives in the sticky countdown bar at top of viewport */}
 
@@ -121,7 +136,7 @@ export default function LandingPage() {
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center mb-16 md:mb-24">
             <div className="w-full md:w-2/5 relative rounded-2xl overflow-hidden border border-[#FFE600]/20 aspect-[4/3]">
               <Image
-                src="/images/bar-partner-pic-1.jpg"
+                src="/images/earn-per-activation.webp"
                 alt="Ambassador running an activation at a partner venue"
                 fill
                 className="object-cover brightness-[0.9] saturate-[1.1] sepia-[.1]"
@@ -149,7 +164,7 @@ export default function LandingPage() {
           <div className="flex flex-col md:flex-row-reverse gap-8 md:gap-12 items-center mb-16 md:mb-24">
             <div className="w-full md:w-2/5 relative rounded-2xl overflow-hidden border border-[#FFE600]/20 aspect-[4/3]">
               <Image
-                src="/images/bar-partner-pic-2.jpg"
+                src="/images/concert-activation.webp"
                 alt="Activation event at a venue on game night"
                 fill
                 className="object-cover brightness-[0.9] saturate-[1.1] sepia-[.1]"
@@ -173,7 +188,7 @@ export default function LandingPage() {
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
             <div className="w-full md:w-2/5 relative rounded-2xl overflow-hidden border border-[#FFE600]/20 aspect-[4/3]">
               <Image
-                src="/images/bar-partner-pic-3.jpg"
+                src="/images/race-activation.webp"
                 alt="WeWin Games team at a partner venue"
                 fill
                 className="object-cover brightness-[0.9] saturate-[1.1] sepia-[.1]"
@@ -203,8 +218,18 @@ export default function LandingPage() {
       {/* ============================================================
           SECTION 4: HOW IT WORKS — 3 numbered steps, updated copy
           ============================================================ */}
-      <section className="relative px-5 py-20 md:py-28 md:px-8 lg:px-16">
-        <div className="max-w-4xl mx-auto">
+      <section className="relative px-5 py-20 md:py-28 md:px-8 lg:px-16 overflow-hidden">
+        {/* Background image — blurred and darkened */}
+        <Image
+          src="/images/how-it-works-bg.webp"
+          alt=""
+          fill
+          className="object-cover brightness-[0.45] blur-sm"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-[#0A0A0A]/30 pointer-events-none" />
+
+        <div className="relative z-10 max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-[#FFF8E7] text-center mb-12 md:mb-16">
             How It Works
           </h2>
@@ -363,12 +388,14 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
             {/* Jason Wexler */}
             <div className="flex flex-col items-center text-center">
-              {/* Placeholder circle with initials — swap for real photo when available */}
-              {/* TODO: Replace with /images/headshot-jason.webp when available */}
-              <div className="w-28 h-28 md:w-32 md:h-32 rounded-full border-2 border-[#FFE600]/30 bg-[#1a1a1a] flex items-center justify-center mb-5 shadow-[0_0_20px_rgba(255,230,0,0.08)]">
-                <span className="text-[#FFE600] text-2xl md:text-3xl font-bold">
-                  JW
-                </span>
+              <div className="w-28 h-28 md:w-32 md:h-32 rounded-full border-2 border-[#FFE600]/30 overflow-hidden mb-5 shadow-[0_0_20px_rgba(255,230,0,0.08)] relative">
+                <Image
+                  src="/images/headshot-jason.webp"
+                  alt="Jason Wexler"
+                  fill
+                  className="object-cover"
+                  sizes="128px"
+                />
               </div>
               <h3 className="text-xl font-bold text-[#FFF8E7] mb-1">
                 Jason Wexler
@@ -384,11 +411,14 @@ export default function LandingPage() {
 
             {/* Ted Hoffman Jr. */}
             <div className="flex flex-col items-center text-center">
-              {/* TODO: Replace with /images/headshot-ted.webp when available */}
-              <div className="w-28 h-28 md:w-32 md:h-32 rounded-full border-2 border-[#FFE600]/30 bg-[#1a1a1a] flex items-center justify-center mb-5 shadow-[0_0_20px_rgba(255,230,0,0.08)]">
-                <span className="text-[#FFE600] text-2xl md:text-3xl font-bold">
-                  TH
-                </span>
+              <div className="w-28 h-28 md:w-32 md:h-32 rounded-full border-2 border-[#FFE600]/30 overflow-hidden mb-5 shadow-[0_0_20px_rgba(255,230,0,0.08)] relative">
+                <Image
+                  src="/images/headshot-ted.webp"
+                  alt="Ted Hoffman Jr."
+                  fill
+                  className="object-cover"
+                  sizes="128px"
+                />
               </div>
               <h3 className="text-xl font-bold text-[#FFF8E7] mb-1">
                 Ted Hoffman Jr.

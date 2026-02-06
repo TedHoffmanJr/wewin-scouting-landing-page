@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import WebinarDateInline from "@/components/ui/WebinarDateInline";
+import AddToCalendar from "@/components/ui/AddToCalendar";
 
 export default function ConfirmedPage() {
   return (
@@ -20,7 +21,7 @@ export default function ConfirmedPage() {
         {/* Logo */}
         <div className="mb-12 md:mb-16">
           <Image
-            src="/images/workmark-logo.png"
+            src="/images/wordmark-logo.png"
             alt="WeWin Games"
             width={140}
             height={40}
@@ -82,11 +83,14 @@ export default function ConfirmedPage() {
               </div>
             </div>
 
-            {/* TODO: Add "Add to Calendar" link (Google Calendar / .ics download) */}
+            {/* Add to Calendar buttons */}
+            <div className="mb-6">
+              <AddToCalendar />
+            </div>
+
             {/* TODO: Replace with actual Zoom link from Jason */}
             <p className="text-[#B0B0B0] text-sm">
-              Check your email for the Zoom link. Mark your calendar — we&apos;ll
-              see you there.
+              Check your email for the Zoom link — we&apos;ll see you there.
             </p>
           </div>
         </div>

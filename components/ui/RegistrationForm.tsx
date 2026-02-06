@@ -81,7 +81,7 @@ export default function RegistrationForm({
         method="POST"
         action="/api/register"
         onSubmit={handleSubmit}
-        className="backdrop-blur-sm bg-white/[0.02] border border-white/[0.05] rounded-2xl p-6 md:p-8 space-y-4"
+        className="backdrop-blur-md bg-[#0A0A0A]/50 border border-white/[0.08] rounded-2xl p-6 md:p-8 space-y-4"
       >
         {errors.form && (
           <p className="text-red-400 text-sm text-center">{errors.form}</p>
@@ -169,6 +169,11 @@ export default function RegistrationForm({
 
         <p className="text-[#B0B0B0] text-xs text-center">
           Free call · 45 minutes · Limited spots per session
+        </p>
+
+        <p className="text-[#B0B0B0]/50 text-[10px] text-center leading-snug">
+          By registering, you consent to receive SMS reminders about this
+          training. Msg &amp; data rates may apply. Reply STOP to opt out.
         </p>
       </form>
     </div>

@@ -88,10 +88,10 @@ export default function CountdownTimer() {
       <div className="relative flex items-center justify-center px-4 sm:px-6 md:px-8 py-2.5 sm:py-3">
         {/* Logo — positioned left, absolutely so countdown stays centered */}
         <Image
-          src="/images/workmark-logo.png"
+          src="/images/wordmark-logo.png"
           alt="WeWin Games"
-          width={140}
-          height={40}
+          width={801}
+          height={399}
           className="absolute left-4 sm:left-6 md:left-8 h-7 sm:h-8 md:h-9 w-auto"
           priority
         />
