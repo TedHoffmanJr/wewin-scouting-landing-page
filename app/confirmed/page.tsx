@@ -90,7 +90,7 @@ export default function ConfirmedPage() {
 
             {/* TODO: Replace with actual Zoom link from Jason */}
             <p className="text-[#B0B0B0] text-sm">
-              Check your email for the Zoom link — we&apos;ll see you there.
+              Check your email for the Zoom link. We&apos;ll see you there.
             </p>
           </div>
         </div>

@@ -55,9 +55,9 @@ export default function LandingPage() {
               <span className="text-[#FFE600]">Pays You to Go Out</span>
             </h1>
             <p className="text-lg md:text-xl text-[#E8E8E8] leading-relaxed max-w-xl mb-2">
-              Free training — learn how people are promoting the most popular
-              gaming and entertainment apps at local venues and events. No
-              experience needed.
+              Free training. Learn how people are getting paid to set up at
+              sports bars on game night and help fans download popular apps.
+              No experience needed.
             </p>
           </div>
 
@@ -146,16 +146,20 @@ export default function LandingPage() {
             </div>
             <div className="w-full md:w-3/5">
               <h3 className="text-2xl md:text-3xl font-extrabold uppercase tracking-tight text-[#FFF8E7] mb-4">
-                Earn Per Activation
+                Get Paid for Every Signup
               </h3>
               <p className="text-[#E8E8E8] text-lg leading-relaxed mb-3">
-                Top ambassadors in active markets have reported earning $150–250+
-                on a busy night.* Show up to partner venues, run activations, get
-                compensated per signup.
+                Show up to a partner bar on game night. Set up a prize wheel.
+                Talk to people who are already there watching the game and help
+                them download popular apps. You get paid for every signup.*
+              </p>
+              <p className="text-[#E8E8E8] text-lg leading-relaxed mb-3">
+                Top ambassadors in active markets have reported earning
+                $150–250+ on a busy night.
               </p>
               <p className="text-[#B0B0B0] text-xs italic">
-                *Results not typical. Individual results vary based on effort and
-                market.
+                *Results not typical. Individual results vary based on effort
+                and market.
               </p>
             </div>
           </div>
@@ -164,8 +168,8 @@ export default function LandingPage() {
           <div className="flex flex-col md:flex-row-reverse gap-8 md:gap-12 items-center mb-16 md:mb-24">
             <div className="w-full md:w-2/5 relative rounded-2xl overflow-hidden border border-[#FFE600]/20 aspect-[4/3]">
               <Image
-                src="/images/concert-activation.webp"
-                alt="Activation event at a venue on game night"
+                src="/images/high-five.webp"
+                alt="Ambassador high-fiving a customer at a partner bar during an activation event"
                 fill
                 className="object-cover brightness-[0.9] saturate-[1.1] sepia-[.1]"
                 sizes="(max-width: 768px) 100vw, 40vw"
@@ -177,9 +181,10 @@ export default function LandingPage() {
                 Your Schedule, Your Call
               </h3>
               <p className="text-[#E8E8E8] text-lg leading-relaxed">
-                No shifts. No manager. No clocking in. Pick your nights —
-                weekends, game nights, special events. Run activations when it
-                works for you, where it works for you.
+                No shifts. No clocking in. Pick your nights: weekends, game
+                nights, special events. Run activations when it works for you,
+                where it works for you. Track every signup and payout in real
+                time through the sales portal. No chasing anyone for your money.
               </p>
             </div>
           </div>
@@ -188,8 +193,8 @@ export default function LandingPage() {
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
             <div className="w-full md:w-2/5 relative rounded-2xl overflow-hidden border border-[#FFE600]/20 aspect-[4/3]">
               <Image
-                src="/images/race-activation.webp"
-                alt="WeWin Games team at a partner venue"
+                src="/images/bar-top-ladies.webp"
+                alt="Ambassador walking through a busy sports bar during game night"
                 fill
                 className="object-cover brightness-[0.9] saturate-[1.1] sepia-[.1]"
                 sizes="(max-width: 768px) 100vw, 40vw"
@@ -202,7 +207,7 @@ export default function LandingPage() {
               </h3>
               <p className="text-[#E8E8E8] text-lg leading-relaxed">
                 Active teams in Boston, Denver, Philly, Austin, Chicago, Tampa,
-                and more. Get connected to a territory in your area — or help us
+                and more. Get connected to a territory in your area or help us
                 open a new one. This isn&apos;t a desk gig. It&apos;s entrepreneurial.
               </p>
             </div>
@@ -216,7 +221,88 @@ export default function LandingPage() {
       </div>
 
       {/* ============================================================
-          SECTION 4: HOW IT WORKS — 3 numbered steps, updated copy
+          SECTION 4: WHAT TO EXPECT ON THE CALL
+          Sells the call itself while attention is high
+          ============================================================ */}
+      <section className="relative px-5 py-20 md:py-28 md:px-8 lg:px-16">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 60% 40% at 50% 40%, rgba(255, 200, 0, 0.02) 0%, transparent 100%)",
+          }}
+        />
+        <div className="relative z-10 max-w-3xl mx-auto">
+          {/* Glass card container */}
+          <div className="backdrop-blur-md bg-white/[0.04] border border-[#FFE600]/20 rounded-2xl p-8 md:p-10 shadow-[0_0_60px_rgba(255,200,0,0.12)]">
+            <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-[#FFF8E7] mb-8 text-center md:text-left">
+              What to Expect on the Call
+            </h2>
+
+            <ul className="space-y-4 mb-10">
+              <li className="flex items-start gap-3">
+                <span className="text-[#FFE600] mt-1 flex-shrink-0">✓</span>
+                <span className="text-[#E8E8E8] leading-relaxed">
+                  See how the most popular apps are compensating people like you at
+                  activation events
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-[#FFE600] mt-1 flex-shrink-0">✓</span>
+                <span className="text-[#E8E8E8] leading-relaxed">
+                  Experience the exact signup process you&apos;ll be promoting,
+                  live on the call
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-[#FFE600] mt-1 flex-shrink-0">✓</span>
+                <span className="text-[#E8E8E8] leading-relaxed">
+                  Get your questions answered in real-time
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-[#FFE600] mt-1 flex-shrink-0">✓</span>
+                <span className="text-[#E8E8E8] leading-relaxed">
+                  Walk away knowing if this is right for you. Zero pressure
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-[#FFE600] mt-1 flex-shrink-0">✓</span>
+                <span className="text-[#E8E8E8] leading-relaxed">
+                  See the sales portal where you track every signup and payout in
+                  real time
+                </span>
+              </li>
+            </ul>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <div className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-4 text-center">
+                <div className="text-[#FFE600] font-bold text-lg">~45 min</div>
+                <div className="text-[#B0B0B0] text-sm">Duration</div>
+              </div>
+              <div className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-4 text-center">
+                <div className="text-[#FFE600] font-bold text-lg">Live Zoom</div>
+                <div className="text-[#B0B0B0] text-sm">Format</div>
+              </div>
+              <div className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-4 text-center">
+                <div className="text-[#FFE600] font-bold text-lg">Free</div>
+                <div className="text-[#B0B0B0] text-sm">Cost</div>
+              </div>
+              <div className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-4 text-center">
+                <WebinarDate />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Thin gold divider */}
+      <div className="flex justify-center">
+        <div className="w-16 h-px bg-[#FFE600]/30" />
+      </div>
+
+      {/* ============================================================
+          SECTION 5: HOW IT WORKS — 3 numbered steps
           ============================================================ */}
       <section className="relative px-5 py-20 md:py-28 md:px-8 lg:px-16 overflow-hidden">
         {/* Background image — blurred and darkened */}
@@ -263,7 +349,7 @@ export default function LandingPage() {
                   Attend the Live Call
                 </h3>
                 <p className="text-[#E8E8E8] leading-relaxed">
-                  See exactly how it works — live walkthrough, real Q&A. No
+                  See exactly how it works. Live walkthrough, real Q&A. No
                   pitch, no pressure.
                 </p>
               </div>
@@ -281,8 +367,8 @@ export default function LandingPage() {
                   Get Connected
                 </h3>
                 <p className="text-[#E8E8E8] leading-relaxed">
-                  Meet a territory leader in your city and start running
-                  activations on your own schedule.
+                  Meet a territory leader in your city who will get you trained
+                  and set up to start running activations on your own schedule.
                 </p>
               </div>
             </div>
@@ -296,9 +382,7 @@ export default function LandingPage() {
       </div>
 
       {/* ============================================================
-          SECTION 5: TESTIMONIALS — Staggered masonry layout
-          NOT uniform cards. Alternating sizes, gold quote marks,
-          city badges, warm glow.
+          SECTION 6: TESTIMONIALS — Staggered masonry layout
           ============================================================ */}
       <section className="relative px-5 py-20 md:py-28 md:px-8 lg:px-16">
         <div
@@ -370,7 +454,7 @@ export default function LandingPage() {
       </div>
 
       {/* ============================================================
-          SECTION 6: YOUR HOSTS — Jason + Ted with photo fallbacks
+          SECTION 7: YOUR HOSTS — Jason + Ted
           ============================================================ */}
       <section className="relative px-5 py-20 md:py-28 md:px-8 lg:px-16">
         <div
@@ -430,79 +514,6 @@ export default function LandingPage() {
                 Ted runs the digital recruitment and training pipeline,
                 connecting new ambassadors with opportunities nationwide.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Thin gold divider */}
-      <div className="flex justify-center">
-        <div className="w-16 h-px bg-[#FFE600]/30" />
-      </div>
-
-      {/* ============================================================
-          SECTION 7: WHAT TO EXPECT ON THE CALL
-          Compliant copy — no "sports betting" or "affiliate marketing"
-          ============================================================ */}
-      <section className="relative px-5 py-20 md:py-28 md:px-8 lg:px-16">
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse 60% 40% at 50% 40%, rgba(255, 200, 0, 0.02) 0%, transparent 100%)",
-          }}
-        />
-        <div className="relative z-10 max-w-3xl mx-auto">
-          <div className="w-12 h-0.5 bg-[#FFE600]/40 mb-8 mx-auto md:mx-0" />
-
-          <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-[#FFF8E7] mb-8 text-center md:text-left">
-            What to Expect on the Call
-          </h2>
-
-          <ul className="space-y-4 mb-10">
-            <li className="flex items-start gap-3">
-              <span className="text-[#FFE600] mt-1 flex-shrink-0">✓</span>
-              <span className="text-[#E8E8E8] leading-relaxed">
-                See how the most popular apps are compensating people like you at
-                activation events
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-[#FFE600] mt-1 flex-shrink-0">✓</span>
-              <span className="text-[#E8E8E8] leading-relaxed">
-                Experience the exact signup process you&apos;ll be promoting —
-                live on the call
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-[#FFE600] mt-1 flex-shrink-0">✓</span>
-              <span className="text-[#E8E8E8] leading-relaxed">
-                Get your questions answered in real-time
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-[#FFE600] mt-1 flex-shrink-0">✓</span>
-              <span className="text-[#E8E8E8] leading-relaxed">
-                Walk away knowing if this is right for you — zero pressure
-              </span>
-            </li>
-          </ul>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="backdrop-blur-sm bg-white/[0.02] border border-white/[0.05] rounded-xl p-4 text-center">
-              <div className="text-[#FFE600] font-bold text-lg">~45 min</div>
-              <div className="text-[#B0B0B0] text-sm">Duration</div>
-            </div>
-            <div className="backdrop-blur-sm bg-white/[0.02] border border-white/[0.05] rounded-xl p-4 text-center">
-              <div className="text-[#FFE600] font-bold text-lg">Live Zoom</div>
-              <div className="text-[#B0B0B0] text-sm">Format</div>
-            </div>
-            <div className="backdrop-blur-sm bg-white/[0.02] border border-white/[0.05] rounded-xl p-4 text-center">
-              <div className="text-[#FFE600] font-bold text-lg">Free</div>
-              <div className="text-[#B0B0B0] text-sm">Cost</div>
-            </div>
-            <div className="backdrop-blur-sm bg-white/[0.02] border border-white/[0.05] rounded-xl p-4 text-center">
-              <WebinarDate />
             </div>
           </div>
         </div>

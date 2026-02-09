@@ -75,16 +75,16 @@ export default function PrivacyPage() {
               </p>
               <ul className="list-disc list-inside mt-3 space-y-1 text-[#E8E8E8]/90">
                 <li>
-                  <strong>GoHighLevel (GHL)</strong> — Customer relationship
+                  <strong>GoHighLevel (GHL)</strong>: Customer relationship
                   management and automated follow-up communications
                 </li>
                 <li>
-                  <strong>Meta (Facebook)</strong> — Ad performance tracking via
+                  <strong>Meta (Facebook)</strong>: Ad performance tracking via
                   the Meta Pixel. This helps us measure and optimize our
                   advertising effectiveness.
                 </li>
                 <li>
-                  <strong>Vercel</strong> — Website hosting and serverless
+                  <strong>Vercel</strong>: Website hosting and serverless
                   function execution
                 </li>
               </ul>

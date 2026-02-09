@@ -7,7 +7,7 @@ const END = new Date(WEBINAR.getTime() + DURATION_MS);
 
 const TITLE = "WeWin Games Live Training";
 const DESCRIPTION =
-  "Free live training — learn how people are promoting the most popular gaming and entertainment apps at local venues and events.";
+  "Free live training. Learn how people are promoting the most popular gaming and entertainment apps at local venues and events.";
 // TODO: Replace with actual Zoom link from Jason
 const LOCATION = "Zoom (check email for link)";
 
