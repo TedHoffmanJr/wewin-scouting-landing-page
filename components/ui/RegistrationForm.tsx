@@ -159,6 +159,30 @@ export default function RegistrationForm({
           )}
         </div>
 
+        {/* SMS Consent — optional checkbox (not required, cannot block submission) */}
+        <label className="flex items-start gap-2.5 cursor-pointer">
+          <input
+            type="checkbox"
+            name="smsConsent"
+            className="mt-0.5 h-4 w-4 shrink-0 appearance-none rounded border border-white/20 bg-white/5 checked:bg-[#FFE600] checked:border-[#FFE600] focus:ring-2 focus:ring-[#FFE600]/20 focus:outline-none transition-all"
+          />
+          <span className="text-[#B0B0B0] text-[11px] leading-snug">
+            I agree to receive SMS messages from{" "}
+            <strong className="text-[#E8E8E8]">Adaptive Growth Partners</strong>{" "}
+            on behalf of{" "}
+            <strong className="text-[#E8E8E8]">We Win Games</strong>{" "}
+            at the phone number provided, including webinar confirmations,
+            reminders, and access links. Message frequency may vary. Message
+            &amp; data rates may apply. Reply HELP for help or STOP to opt out.
+          </span>
+        </label>
+
+        <div className="flex justify-center gap-3 text-[11px] text-[#B0B0B0]/60">
+          <a href="/privacy" className="underline hover:text-[#B0B0B0]">Privacy Policy</a>
+          <span>·</span>
+          <a href="/terms" className="underline hover:text-[#B0B0B0]">Terms of Service</a>
+        </div>
+
         <button
           type="submit"
           disabled={submitting}
@@ -169,18 +193,6 @@ export default function RegistrationForm({
 
         <p className="text-[#B0B0B0] text-xs text-center">
           Free call · 45 minutes · Limited spots per session
-        </p>
-
-        <p className="text-[#B0B0B0]/50 text-[10px] text-center leading-snug mt-1">
-          By submitting this form, you consent to receive SMS messages from{" "}
-          <strong className="text-[#B0B0B0]/70">We Win Games</strong> at the
-          phone number provided, including webinar confirmations, reminders,
-          and access links. Message frequency may vary. Message &amp; data
-          rates may apply. Reply HELP for help or STOP to opt out. View
-          our{" "}
-          <a href="/privacy" className="underline hover:text-[#B0B0B0]/80">Privacy Policy</a>
-          {" "}&amp;{" "}
-          <a href="/terms" className="underline hover:text-[#B0B0B0]/80">Terms of Service</a>.
         </p>
       </form>
     </div>

@@ -123,12 +123,50 @@ export default function PrivacyPage() {
 
             <section>
               <h2 className="text-xl font-bold text-[#FFF8E7] mb-3">
+                Cookies &amp; Tracking
+              </h2>
+              <p>This site may use the following tracking technologies:</p>
+              <ul className="list-disc list-inside mt-3 space-y-1 text-[#E8E8E8]/90">
+                <li>
+                  <strong>Meta Pixel</strong>: Tracks ad conversions and page
+                  views to measure advertising performance. This pixel may place
+                  cookies on your browser.
+                </li>
+                <li>
+                  <strong>Essential cookies</strong>: Used for basic site
+                  functionality such as form submission.
+                </li>
+              </ul>
+              <p className="mt-3">
+                We do not use cookies for cross-site behavioral advertising
+                beyond the Meta Pixel described above. You can control cookies
+                through your browser settings.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-bold text-[#FFF8E7] mb-3">
+                Data Security &amp; Handling
+              </h2>
+              <p>
+                We take reasonable measures to protect your personal information
+                from unauthorized access, alteration, or destruction. Data is
+                transmitted over encrypted connections (HTTPS) and stored in
+                secure, access-controlled systems. However, no method of
+                electronic transmission or storage is 100% secure, and we
+                cannot guarantee absolute security.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-bold text-[#FFF8E7] mb-3">
                 SMS &amp; Text Messaging
               </h2>
               <p>
                 By providing your phone number and submitting the registration
-                form, you consent to receive text messages from We Win Games
-                related to the webinar, including:
+                form, you consent to receive text messages from Adaptive Growth
+                Partners on behalf of We Win Games related to the webinar,
+                including:
               </p>
               <ul className="list-disc list-inside mt-3 space-y-1 text-[#E8E8E8]/90">
                 <li>Registration confirmations</li>

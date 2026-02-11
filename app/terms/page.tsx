@@ -89,7 +89,8 @@ export default function TermsPage() {
               </h2>
               <p>
                 By submitting the registration form with your phone number, you
-                agree to receive text messages from We Win Games, including
+                agree to receive text messages from Adaptive Growth Partners on
+                behalf of We Win Games, including
                 webinar confirmations, reminders, and access links. Message
                 frequency may vary. Message and data rates may apply.
               </p>
@@ -103,6 +104,19 @@ export default function TermsPage() {
                 Your consent to receive SMS messages is not a condition of
                 registration or participation. SMS consent information is not
                 shared with third parties for their marketing purposes.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-bold text-[#FFF8E7] mb-3">
+                Carrier Liability Disclaimer
+              </h2>
+              <p>
+                Wireless carriers are not liable for delayed or undelivered
+                messages. Message delivery is subject to effective transmission
+                from your wireless service provider. Adaptive Growth Partners
+                and We Win Games are not responsible for messages that are not
+                delivered due to carrier issues or device incompatibility.
               </p>
             </section>
 
