@@ -171,9 +171,16 @@ export default function RegistrationForm({
           Free call · 45 minutes · Limited spots per session
         </p>
 
-        <p className="text-[#B0B0B0]/50 text-[10px] text-center leading-snug">
-          By registering, you consent to receive SMS reminders about this
-          training. Msg &amp; data rates may apply. Reply STOP to opt out.
+        <p className="text-[#B0B0B0]/50 text-[10px] text-center leading-snug mt-1">
+          By submitting this form, you consent to receive SMS messages from{" "}
+          <strong className="text-[#B0B0B0]/70">We Win Games</strong> at the
+          phone number provided, including webinar confirmations, reminders,
+          and access links. Message frequency may vary. Message &amp; data
+          rates may apply. Reply HELP for help or STOP to opt out. View
+          our{" "}
+          <a href="/privacy" className="underline hover:text-[#B0B0B0]/80">Privacy Policy</a>
+          {" "}&amp;{" "}
+          <a href="/terms" className="underline hover:text-[#B0B0B0]/80">Terms of Service</a>.
         </p>
       </form>
     </div>

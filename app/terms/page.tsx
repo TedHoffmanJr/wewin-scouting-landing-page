@@ -85,6 +85,29 @@ export default function TermsPage() {
 
             <section>
               <h2 className="text-xl font-bold text-[#FFF8E7] mb-3">
+                SMS &amp; Text Messaging Terms
+              </h2>
+              <p>
+                By submitting the registration form with your phone number, you
+                agree to receive text messages from We Win Games, including
+                webinar confirmations, reminders, and access links. Message
+                frequency may vary. Message and data rates may apply.
+              </p>
+              <p className="mt-3">
+                You may opt out of messages at any time by replying{" "}
+                <strong>STOP</strong> to any message. Reply{" "}
+                <strong>HELP</strong> for assistance. Opting out of SMS does not
+                affect your webinar registration.
+              </p>
+              <p className="mt-3">
+                Your consent to receive SMS messages is not a condition of
+                registration or participation. SMS consent information is not
+                shared with third parties for their marketing purposes.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-bold text-[#FFF8E7] mb-3">
                 Modifications
               </h2>
               <p>

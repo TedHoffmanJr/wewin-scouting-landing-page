@@ -123,6 +123,32 @@ export default function PrivacyPage() {
 
             <section>
               <h2 className="text-xl font-bold text-[#FFF8E7] mb-3">
+                SMS &amp; Text Messaging
+              </h2>
+              <p>
+                By providing your phone number and submitting the registration
+                form, you consent to receive text messages from We Win Games
+                related to the webinar, including:
+              </p>
+              <ul className="list-disc list-inside mt-3 space-y-1 text-[#E8E8E8]/90">
+                <li>Registration confirmations</li>
+                <li>Webinar reminders and access links</li>
+              </ul>
+              <p className="mt-3">
+                Message frequency may vary. Message and data rates may apply.
+                You may opt out at any time by replying <strong>STOP</strong> to
+                any message. Reply <strong>HELP</strong> for assistance.
+              </p>
+              <p className="mt-3">
+                Your SMS consent is not shared with or sold to third parties
+                for their marketing purposes. Phone numbers are shared only
+                with our SMS service provider for the purpose of delivering
+                messages you have consented to receive.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-bold text-[#FFF8E7] mb-3">
                 Data Sales
               </h2>
               <p>We do not sell your personal information.</p>
