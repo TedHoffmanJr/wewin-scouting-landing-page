@@ -167,13 +167,14 @@ export default function RegistrationForm({
             className="mt-0.5 h-4 w-4 shrink-0 appearance-none rounded border border-white/20 bg-white/5 checked:bg-[#FFE600] checked:border-[#FFE600] focus:ring-2 focus:ring-[#FFE600]/20 focus:outline-none transition-all"
           />
           <span className="text-[#B0B0B0] text-[11px] leading-snug">
-            I agree to receive SMS messages from{" "}
+            I agree to receive SMS text messages from{" "}
             <strong className="text-[#E8E8E8]">Adaptive Growth Partners</strong>{" "}
             on behalf of{" "}
             <strong className="text-[#E8E8E8]">We Win Games</strong>{" "}
-            at the phone number provided, including webinar confirmations,
-            reminders, and access links. Message frequency may vary. Message
-            &amp; data rates may apply. Reply HELP for help or STOP to opt out.
+            at the phone number provided regarding webinar registration
+            information, event reminders, and access links. Message frequency
+            may vary. Message &amp; data rates may apply. Reply HELP for help
+            or STOP to opt out.
           </span>
         </label>
 
