@@ -77,9 +77,9 @@ export default function TermsPage() {
                 Age Requirement
               </h2>
               <p>
-                You must be 21 years of age or older to participate in this
-                program. By registering, you confirm that you meet this age
-                requirement.
+                You must be at least 18 years of age to register and at least
+                21 years of age to participate in activation events. By
+                registering, you confirm that you meet these age requirements.
               </p>
             </section>
 
