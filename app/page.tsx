@@ -3,11 +3,13 @@ import Link from "next/link";
 import RegistrationForm from "@/components/ui/RegistrationForm";
 import CountdownTimer from "@/components/ui/CountdownTimer";
 import WebinarDate from "@/components/ui/WebinarDate";
+import PixelEvent from "@/components/ui/PixelEvent";
 import { TESTIMONIALS } from "@/lib/constants";
 
 export default function LandingPage() {
   return (
     <main className="min-h-screen pt-[72px] sm:pt-[76px]">
+      <PixelEvent event="ViewContent" />
       {/* Sticky countdown bar — fixed to top of viewport, content scrolls under it */}
       <CountdownTimer />
 

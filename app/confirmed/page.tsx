@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import WebinarDateInline from "@/components/ui/WebinarDateInline";
 import AddToCalendar from "@/components/ui/AddToCalendar";
+import PixelEvent from "@/components/ui/PixelEvent";
 
 export default function ConfirmedPage() {
   return (
@@ -15,7 +16,7 @@ export default function ConfirmedPage() {
         }}
       />
 
-      {/* TODO: Fire Meta Pixel "CompleteRegistration" event once ID is configured */}
+      <PixelEvent event="CompleteRegistration" />
 
       <div className="relative z-10 flex-1 flex flex-col px-5 pt-6 pb-12 md:px-8 lg:px-16">
         {/* Logo */}

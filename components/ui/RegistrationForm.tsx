@@ -3,6 +3,15 @@
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 
+const US_STATES = [
+  "AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA",
+  "HI","ID","IL","IN","IA","KS","KY","LA","ME","MD",
+  "MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ",
+  "NM","NY","NC","ND","OH","OK","OR","PA","RI","SC",
+  "SD","TN","TX","UT","VT","VA","WA","WV","WI","WY",
+  "DC",
+] as const;
+
 export default function RegistrationForm({
   heading,
 }: {
@@ -15,17 +24,19 @@ export default function RegistrationForm({
 
   function validate(formData: FormData): Record<string, string> {
     const errs: Record<string, string> = {};
-    const name = (formData.get("name") as string)?.trim();
+    const firstName = (formData.get("firstName") as string)?.trim();
     const email = (formData.get("email") as string)?.trim();
     const phone = (formData.get("phone") as string)?.trim();
     const city = (formData.get("city") as string)?.trim();
+    const state = (formData.get("state") as string)?.trim();
 
-    if (!name || name.length < 2) errs.name = "Please enter your first name";
+    if (!firstName || firstName.length < 2) errs.firstName = "Please enter your first name";
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
       errs.email = "Please enter a valid email";
     if (!phone || phone.replace(/\D/g, "").length < 10)
       errs.phone = "Please enter a valid phone number";
     if (!city || city.length < 2) errs.city = "Please enter your city";
+    if (!state) errs.state = "Select state";
 
     return errs;
   }
@@ -48,10 +59,11 @@ export default function RegistrationForm({
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: (formData.get("name") as string).trim(),
+          firstName: (formData.get("firstName") as string).trim(),
           email: (formData.get("email") as string).trim(),
           phone: (formData.get("phone") as string).trim(),
           city: (formData.get("city") as string).trim(),
+          state: (formData.get("state") as string).trim(),
         }),
       });
 
@@ -66,6 +78,10 @@ export default function RegistrationForm({
       setSubmitting(false);
     }
   }
+
+  const suffix = heading ? "bottom" : "top";
+  const inputClass =
+    "w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[#666] focus:outline-none focus:border-[#FFE600] focus:ring-2 focus:ring-[#FFE600]/20 transition-all";
 
   return (
     <div className="w-full max-w-md mx-auto">
@@ -88,35 +104,35 @@ export default function RegistrationForm({
         )}
 
         <div>
-          <label htmlFor={`name-${heading ? "bottom" : "top"}`} className="sr-only">
+          <label htmlFor={`firstName-${suffix}`} className="sr-only">
             First Name
           </label>
           <input
             type="text"
-            id={`name-${heading ? "bottom" : "top"}`}
-            name="name"
+            id={`firstName-${suffix}`}
+            name="firstName"
             placeholder="First Name"
             autoComplete="given-name"
             required
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[#666] focus:outline-none focus:border-[#FFE600] focus:ring-2 focus:ring-[#FFE600]/20 transition-all"
+            className={inputClass}
           />
-          {errors.name && (
-            <p className="text-red-400 text-xs mt-1">{errors.name}</p>
+          {errors.firstName && (
+            <p className="text-red-400 text-xs mt-1">{errors.firstName}</p>
           )}
         </div>
 
         <div>
-          <label htmlFor={`email-${heading ? "bottom" : "top"}`} className="sr-only">
+          <label htmlFor={`email-${suffix}`} className="sr-only">
             Email
           </label>
           <input
             type="email"
-            id={`email-${heading ? "bottom" : "top"}`}
+            id={`email-${suffix}`}
             name="email"
             placeholder="Email Address"
             autoComplete="email"
             required
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[#666] focus:outline-none focus:border-[#FFE600] focus:ring-2 focus:ring-[#FFE600]/20 transition-all"
+            className={inputClass}
           />
           {errors.email && (
             <p className="text-red-400 text-xs mt-1">{errors.email}</p>
@@ -124,39 +140,67 @@ export default function RegistrationForm({
         </div>
 
         <div>
-          <label htmlFor={`phone-${heading ? "bottom" : "top"}`} className="sr-only">
+          <label htmlFor={`phone-${suffix}`} className="sr-only">
             Phone
           </label>
           <input
             type="tel"
-            id={`phone-${heading ? "bottom" : "top"}`}
+            id={`phone-${suffix}`}
             name="phone"
             placeholder="Phone Number"
             autoComplete="tel"
             required
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[#666] focus:outline-none focus:border-[#FFE600] focus:ring-2 focus:ring-[#FFE600]/20 transition-all"
+            className={inputClass}
           />
           {errors.phone && (
             <p className="text-red-400 text-xs mt-1">{errors.phone}</p>
           )}
         </div>
 
-        <div>
-          <label htmlFor={`city-${heading ? "bottom" : "top"}`} className="sr-only">
-            City
-          </label>
-          <input
-            type="text"
-            id={`city-${heading ? "bottom" : "top"}`}
-            name="city"
-            placeholder="Your City"
-            autoComplete="address-level2"
-            required
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[#666] focus:outline-none focus:border-[#FFE600] focus:ring-2 focus:ring-[#FFE600]/20 transition-all"
-          />
-          {errors.city && (
-            <p className="text-red-400 text-xs mt-1">{errors.city}</p>
-          )}
+        {/* City + State on the same row */}
+        <div className="flex gap-3">
+          <div className="flex-1">
+            <label htmlFor={`city-${suffix}`} className="sr-only">
+              City
+            </label>
+            <input
+              type="text"
+              id={`city-${suffix}`}
+              name="city"
+              placeholder="Your City"
+              autoComplete="address-level2"
+              required
+              className={inputClass}
+            />
+            {errors.city && (
+              <p className="text-red-400 text-xs mt-1">{errors.city}</p>
+            )}
+          </div>
+          <div className="w-[5.5rem]">
+            <label htmlFor={`state-${suffix}`} className="sr-only">
+              State
+            </label>
+            <select
+              id={`state-${suffix}`}
+              name="state"
+              required
+              defaultValue=""
+              autoComplete="address-level1"
+              className="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#FFE600] focus:ring-2 focus:ring-[#FFE600]/20 transition-all appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M6%208L1%203h10z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:12px] bg-[right_12px_center] bg-no-repeat pr-8"
+            >
+              <option value="" disabled className="bg-[#1a1a1a] text-[#666]">
+                State
+              </option>
+              {US_STATES.map((s) => (
+                <option key={s} value={s} className="bg-[#1a1a1a] text-white">
+                  {s}
+                </option>
+              ))}
+            </select>
+            {errors.state && (
+              <p className="text-red-400 text-xs mt-1">{errors.state}</p>
+            )}
+          </div>
         </div>
 
         <button
