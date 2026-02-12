@@ -1,10 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import WebinarDateInline from "@/components/ui/WebinarDateInline";
+import { webinarConfig } from "@/lib/webinar-config";
 import AddToCalendar from "@/components/ui/AddToCalendar";
 import PixelEvent from "@/components/ui/PixelEvent";
 
 export default function ConfirmedPage() {
+  const { zoomLink, dateDisplay, timeDisplay, duration, meetingId, passcode } =
+    webinarConfig;
+
   return (
     <main className="min-h-screen flex flex-col">
       {/* Background glow */}
@@ -36,7 +39,7 @@ export default function ConfirmedPage() {
           <div className="max-w-lg text-center">
             {/* Gold check */}
             <div className="w-16 h-16 rounded-full bg-[#FFE600]/10 border-2 border-[#FFE600] flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(255,230,0,0.15)]">
-              <span className="text-[#FFE600] text-3xl">✓</span>
+              <span className="text-[#FFE600] text-3xl">&#10003;</span>
             </div>
 
             <h1 className="text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-[#FFF8E7] mb-4">
@@ -44,8 +47,8 @@ export default function ConfirmedPage() {
             </h1>
 
             <p className="text-lg text-[#E8E8E8] mb-10 leading-relaxed">
-              You&apos;ll receive a confirmation email shortly with your Zoom
-              link. Here&apos;s what you need to know:
+              You&apos;ll receive a confirmation email shortly. Here&apos;s what
+              you need to know:
             </p>
 
             {/* Webinar details */}
@@ -62,19 +65,25 @@ export default function ConfirmedPage() {
                 <span className="text-[#B0B0B0] text-sm uppercase tracking-wider">
                   When
                 </span>
-                <WebinarDateInline />
+                <span className="text-[#FFF8E7] font-semibold">
+                  {dateDisplay} &middot; {timeDisplay}
+                </span>
               </div>
               <div className="flex justify-between items-center border-b border-white/[0.05] pb-3">
                 <span className="text-[#B0B0B0] text-sm uppercase tracking-wider">
                   Duration
                 </span>
-                <span className="text-[#FFF8E7] font-semibold">~45 minutes</span>
+                <span className="text-[#FFF8E7] font-semibold">
+                  ~{duration} minutes
+                </span>
               </div>
               <div className="flex justify-between items-center border-b border-white/[0.05] pb-3">
                 <span className="text-[#B0B0B0] text-sm uppercase tracking-wider">
                   Format
                 </span>
-                <span className="text-[#FFF8E7] font-semibold">Live Zoom Call</span>
+                <span className="text-[#FFF8E7] font-semibold">
+                  Live Zoom Call
+                </span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-[#B0B0B0] text-sm uppercase tracking-wider">
@@ -84,14 +93,28 @@ export default function ConfirmedPage() {
               </div>
             </div>
 
+            {/* JOIN ZOOM — Primary CTA */}
+            <a
+              href={zoomLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-center bg-[#FFE600] text-[#0A0A0A] font-bold text-lg uppercase tracking-wide py-4 px-6 rounded-lg hover:bg-[#FFF033] transition-all shadow-[0_0_30px_rgba(255,230,0,0.15)] mb-3"
+            >
+              Join Zoom Meeting
+            </a>
+
+            <p className="text-[#B0B0B0] text-sm mb-8">
+              Meeting ID: {meetingId} &middot; Passcode: {passcode}
+            </p>
+
             {/* Add to Calendar buttons */}
             <div className="mb-6">
               <AddToCalendar />
             </div>
 
-            {/* TODO: Replace with actual Zoom link from Jason */}
             <p className="text-[#B0B0B0] text-sm">
-              Check your email for the Zoom link. We&apos;ll see you there.
+              Bookmark the Zoom link above and add it to your calendar.
+              We&apos;ll see you {dateDisplay} at {timeDisplay}!
             </p>
           </div>
         </div>
@@ -109,7 +132,7 @@ export default function ConfirmedPage() {
             className="h-10 w-auto"
           />
           <p className="text-[#B0B0B0] text-sm">
-            © 2026 WeWin Games. All rights reserved.
+            &copy; 2026 WeWin Games. All rights reserved.
           </p>
           <p className="text-[#B0B0B0]/70 text-xs max-w-lg">
             Must be 21+. Results not typical. Individual results will vary. This
@@ -128,7 +151,7 @@ export default function ConfirmedPage() {
             <Link href="/privacy" className="underline hover:text-[#B0B0B0]">
               Privacy Policy
             </Link>
-            <span>·</span>
+            <span>&middot;</span>
             <Link href="/terms" className="underline hover:text-[#B0B0B0]">
               Terms of Service
             </Link>

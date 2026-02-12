@@ -14,8 +14,8 @@ export const COLORS = {
 // See .env.local and lib/webinar-date.ts for the single source of truth
 export const WEBINAR_DURATION = "~45 minutes";
 
-// TODO: Replace with actual Zoom link from Jason
-export const ZOOM_LINK = "https://zoom.us/j/placeholder";
+// Zoom link now managed via env vars — see lib/webinar-config.ts
+export { webinarConfig } from "./webinar-config";
 
 export const CONTACT_EMAIL = "hello@joinwewingames.com";
 

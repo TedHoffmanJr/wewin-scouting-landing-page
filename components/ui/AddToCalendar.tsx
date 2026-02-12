@@ -1,54 +1,20 @@
 "use client";
 
-const WEBINAR_ISO = process.env.NEXT_PUBLIC_WEBINAR_DATE || "2026-02-17T20:00:00-05:00";
-const WEBINAR = new Date(WEBINAR_ISO);
-const DURATION_MS = 45 * 60 * 1000; // 45 minutes
-const END = new Date(WEBINAR.getTime() + DURATION_MS);
-
-const TITLE = "WeWin Games Live Training";
-const DESCRIPTION =
-  "Free live training. Learn how people are promoting the most popular gaming and entertainment apps at local venues and events.";
-// TODO: Replace with actual Zoom link from Jason
-const LOCATION = "Zoom (check email for link)";
-
-/** Format Date to Google Calendar's required yyyyMMddTHHmmssZ format */
-function toGoogleCalFormat(d: Date): string {
-  return d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
-}
-
-/** Generate .ics file content */
-function generateICS(): string {
-  const fmt = (d: Date) =>
-    d
-      .toISOString()
-      .replace(/[-:]/g, "")
-      .replace(/\.\d{3}/, "");
-
-  return [
-    "BEGIN:VCALENDAR",
-    "VERSION:2.0",
-    "PRODID:-//WeWin Games//Training//EN",
-    "BEGIN:VEVENT",
-    `DTSTART:${fmt(WEBINAR)}`,
-    `DTEND:${fmt(END)}`,
-    `SUMMARY:${TITLE}`,
-    `DESCRIPTION:${DESCRIPTION}`,
-    `LOCATION:${LOCATION}`,
-    "END:VEVENT",
-    "END:VCALENDAR",
-  ].join("\r\n");
-}
+import { getGoogleCalendarUrl, generateIcsContent } from "@/lib/webinar-config";
 
 export default function AddToCalendar() {
-  const googleUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(TITLE)}&dates=${toGoogleCalFormat(WEBINAR)}/${toGoogleCalFormat(END)}&details=${encodeURIComponent(DESCRIPTION)}&location=${encodeURIComponent(LOCATION)}`;
+  const googleUrl = getGoogleCalendarUrl();
 
   function handleICSDownload() {
-    const blob = new Blob([generateICS()], { type: "text/calendar" });
+    const icsContent = generateIcsContent();
+    const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "wewin-training.ics";
+    a.download = "wewin-games-training.ics";
+    document.body.appendChild(a);
     a.click();
+    document.body.removeChild(a);
     URL.revokeObjectURL(url);
   }
 
