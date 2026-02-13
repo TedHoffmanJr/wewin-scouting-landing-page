@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { webinarConfig } from "@/lib/webinar-config";
 import AddToCalendar from "@/components/ui/AddToCalendar";
+import InlineCountdown from "@/components/ui/InlineCountdown";
 import PixelEvent from "@/components/ui/PixelEvent";
 
 export default function ConfirmedPage() {
@@ -91,6 +92,11 @@ export default function ConfirmedPage() {
                 </span>
                 <span className="text-[#FFE600] font-bold">Free</span>
               </div>
+            </div>
+
+            {/* Inline countdown */}
+            <div className="mb-8">
+              <InlineCountdown />
             </div>
 
             {/* JOIN ZOOM — Primary CTA */}
