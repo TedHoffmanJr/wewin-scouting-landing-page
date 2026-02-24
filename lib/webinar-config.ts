@@ -7,11 +7,11 @@ export const webinarConfig = {
     process.env.NEXT_PUBLIC_WEBINAR_ZOOM_LINK ||
     "https://us06web.zoom.us/j/84590785058?pwd=dBRhwCWYtnZKSGKLMQ9kZYgr5VVRJJ.1",
   dateDisplay:
-    process.env.NEXT_PUBLIC_WEBINAR_DATE_DISPLAY || "Thursday, February 19th",
+    process.env.NEXT_PUBLIC_WEBINAR_DATE_DISPLAY || "Thursday, February 26th",
   timeDisplay: process.env.NEXT_PUBLIC_WEBINAR_TIME_DISPLAY || "7:00 PM EST",
   duration: parseInt(process.env.NEXT_PUBLIC_WEBINAR_DURATION || "45", 10),
-  isoStart: process.env.NEXT_PUBLIC_WEBINAR_ISO_START || "20260219T190000",
-  isoEnd: process.env.NEXT_PUBLIC_WEBINAR_ISO_END || "20260219T200000",
+  isoStart: process.env.NEXT_PUBLIC_WEBINAR_ISO_START || "20260226T190000",
+  isoEnd: process.env.NEXT_PUBLIC_WEBINAR_ISO_END || "20260226T200000",
   meetingId: "845 9078 5058",
   passcode: "608098",
 } as const;

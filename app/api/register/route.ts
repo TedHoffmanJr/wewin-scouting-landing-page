@@ -91,7 +91,7 @@ export async function POST(request: NextRequest) {
             locationId: GHL_LOCATION_ID,
             tags: [
               "wewin-webinar",
-              "webinar-2026-02-19",
+              "webinar-2026-02-26",
               "source-meta-ads",
             ],
             source: "joinwewingames.com",
