@@ -210,7 +210,7 @@ export default function RegistrationForm({
             type="checkbox"
             id={`smsConsent-${suffix}`}
             name="smsConsent"
-            defaultChecked
+            defaultChecked={false}
             className="mt-1 h-4 w-4 rounded border-white/20 bg-white/5 text-[#FFE600] focus:ring-[#FFE600]/30 accent-[#FFE600] cursor-pointer flex-shrink-0"
           />
           <label
@@ -221,10 +221,10 @@ export default function RegistrationForm({
             <strong className="text-[#B0B0B0]/90">Adaptive Growth Partners</strong>{" "}
             on behalf of{" "}
             <strong className="text-[#B0B0B0]/90">We Win Games</strong>{" "}
-            at the phone number provided regarding webinar registration
-            information, event reminders, and access links. Message frequency
-            may vary. Message &amp; data rates may apply. Reply HELP for help
-            or STOP to opt out.
+            at the phone number provided. Message types include:
+            registration confirmations, event reminders, and webinar
+            access links. Message frequency may vary. Message &amp; data
+            rates may apply. Reply HELP for help or STOP to opt out.
           </label>
         </div>
 
