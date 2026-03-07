@@ -6,7 +6,8 @@ export async function POST(request: NextRequest) {
     email: string,
     phone: string,
     city: string,
-    state: string;
+    state: string,
+    smsConsent: boolean;
 
   const contentType = request.headers.get("content-type") || "";
 
@@ -17,6 +18,7 @@ export async function POST(request: NextRequest) {
     phone = body.phone;
     city = body.city;
     state = body.state;
+    smsConsent = body.smsConsent ?? false;
   } else {
     const formData = await request.formData();
     firstName = formData.get("firstName") as string;
@@ -24,6 +26,7 @@ export async function POST(request: NextRequest) {
     phone = formData.get("phone") as string;
     city = formData.get("city") as string;
     state = formData.get("state") as string;
+    smsConsent = formData.get("smsConsent") === "on";
   }
 
   // Server-side validation
@@ -92,6 +95,7 @@ export async function POST(request: NextRequest) {
             tags: [
               "wewin-webinar",
               "source-meta-ads",
+              ...(smsConsent ? ["sms-consent"] : []),
             ],
             source: "joinwewingames.com",
           }),

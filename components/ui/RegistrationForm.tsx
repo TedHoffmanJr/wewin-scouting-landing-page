@@ -64,6 +64,7 @@ export default function RegistrationForm({
           phone: (formData.get("phone") as string).trim(),
           city: (formData.get("city") as string).trim(),
           state: (formData.get("state") as string).trim(),
+          smsConsent: formData.get("smsConsent") === "on",
         }),
       });
 
@@ -203,6 +204,30 @@ export default function RegistrationForm({
           </div>
         </div>
 
+        {/* SMS Consent Checkbox */}
+        <div className="flex items-start gap-3 mt-2">
+          <input
+            type="checkbox"
+            id={`smsConsent-${suffix}`}
+            name="smsConsent"
+            defaultChecked
+            className="mt-1 h-4 w-4 rounded border-white/20 bg-white/5 text-[#FFE600] focus:ring-[#FFE600]/30 accent-[#FFE600] cursor-pointer flex-shrink-0"
+          />
+          <label
+            htmlFor={`smsConsent-${suffix}`}
+            className="text-[#B0B0B0]/70 text-[11px] leading-snug cursor-pointer"
+          >
+            I consent to receive SMS text messages from{" "}
+            <strong className="text-[#B0B0B0]/90">Adaptive Growth Partners</strong>{" "}
+            on behalf of{" "}
+            <strong className="text-[#B0B0B0]/90">We Win Games</strong>{" "}
+            at the phone number provided regarding webinar registration
+            information, event reminders, and access links. Message frequency
+            may vary. Message &amp; data rates may apply. Reply HELP for help
+            or STOP to opt out.
+          </label>
+        </div>
+
         <button
           type="submit"
           disabled={submitting}
@@ -213,18 +238,6 @@ export default function RegistrationForm({
 
         <p className="text-[#B0B0B0] text-xs text-center">
           Free call · 45 minutes · Limited spots per session
-        </p>
-
-        <p className="text-[#B0B0B0]/50 text-[10px] text-center leading-snug mt-1">
-          By submitting this form, you consent to receive SMS text messages
-          from{" "}
-          <strong className="text-[#B0B0B0]/70">Adaptive Growth Partners</strong>{" "}
-          on behalf of{" "}
-          <strong className="text-[#B0B0B0]/70">We Win Games</strong>{" "}
-          at the phone number provided regarding webinar registration
-          information, event reminders, and access links. Message frequency
-          may vary. Message &amp; data rates may apply. Reply HELP for help
-          or STOP to opt out.
         </p>
 
         <div className="flex justify-center gap-3 text-[10px] text-[#B0B0B0]/50">
